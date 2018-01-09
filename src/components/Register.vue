@@ -96,9 +96,7 @@
 </script>
 
 <style lang="scss" scoped>
-  input, select, option {
-    outline: none;
-  }
+  @import '../assets/scss/layout.scss';
 
   .title-size {
     font-size: 112px;
@@ -109,15 +107,7 @@
   }
 
   .main {
-    width: 100%;
-    height: 100vh;
     background: url("../assets/images/registerbg.jpg") no-repeat left top / 100% #f2e7ed;
-    overflow: hidden;
-    @media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px){
-      overflow: auto;
-    }
     div {
       width: 100%;
       padding-top: 112px;
@@ -141,16 +131,16 @@
           position: absolute;
         }
         .hint-name, .section-name {
-          font-size: 40px;
           bottom: -62px;
           left: 130px;
+          font-size: 40px;
           color: #ad2224;
         }
         .section-icon {
+          right: 120px;
           width: 0;
           height: 0;
           bottom: 35px;
-          right: 120px;
           border: 20px solid #545a5d;
           border-color: #545a5d transparent transparent transparent;
         }

@@ -1,32 +1,47 @@
 <template>
-  <div class="main">
-    <div class="top">
-      <img class="logo" src="../assets/images/logo1.png" alt="">
-      <h2>渠道无忧2018年会盛典</h2>
+    <div class="side">
+      <transition name="fade">
+        <div class="side-content" v-if="showSide">
+          <div class="personal">
+            <img src="../assets/images/09.jpg" alt="">
+            <p class="personal-name">邓小一</p>
+          </div>
+          <router-link to='/Interactive'>
+            <div class="interactive">
+              <span></span>
+              <button>&nbsp;&nbsp;&nbsp;&nbsp;进入聊天互动</button>
+            </div>
+          </router-link>
+          <router-link to='/Process'>
+            <div class="process">
+              <span></span>
+              <button>&nbsp;&nbsp;&nbsp;&nbsp;查看节目流程</button>
+            </div>
+          </router-link>
+          <div class="member">
+            <p class="member-title">当前在线人数（68/92）</p>
+            <input type="text" value="搜索">
+            <div class="member-list">
+              <p v-for="item in onlineList" class="online">
+                <span class="member-icon"></span>
+                <img :src="item.headPortrait" alt="">
+                <span class="personal-name">{{item.personalName}}</span>
+              </p>
+              <p v-for="item in offlineList" class="offline">
+                <span class="member-icon"></span>
+                <img :src="item.headPortrait" alt="">
+                <span class="personal-name">{{item.personalName}}</span>
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </transition>
+      <span class="icon" @click="showSide = !showSide"></span>
     </div>
-    <div class="content">
-      <p class="table-top">
-        <span class="sort">排序</span>
-        <span class="pgmtime">时间</span>
-        <span class="details">节目内容</span>
-      </p>
-      <p class="table-body" v-for="item in processList">
-        <span class="sort">{{item.sort}}</span>
-        <span class="pgmtime">{{item.pgmtime}}</span>
-        <span class="details">{{item.details}}</span>
-      </p>
-      <p class="table-bottom">
-        <span class="sort"></span>
-        <span class="pgmtime"></span>
-        <span></span>
-      </p>
-    </div>
-    <ms-side></ms-side>
-  </div>
 </template>
 
 <script>
-  import MsSide from '@/components/Side'
   export default {
     name: 'Process',
     data() {
@@ -229,81 +244,21 @@
           }
         ]
       }
-    },
-    components: {
-      MsSide
     }
   }
 </script>
 
 <style lang="scss" scoped>
-
-  @import '../assets/scss/layout.scss';
-  .main {
-    background: url("../assets/images/program-bg.png") no-repeat center / 100% #f2e7ed;
-    .top {
-      width: 100%;
-      height: 24%;
-      text-align: center;
-      .logo {
-        margin-top: 70px;
-        width: 20%;
-      }
-      h2 {
-        font-size: 60px;
-        color: #b92823;
-      }
-    }
-    .content {
-      height: 70%;
-      width: 80%;
-      margin: 0 auto;
-      border: 2px solid #19548c;
-      border-radius: 30px;
-      p {
-        height: 4%;
-        font-size: 30px;
-        border-bottom: 2px solid #19548c;
-        span {
-          display: inline-block;
-          height: 100%;
-          text-align: center;
-        }
-        .sort,
-        .pgmtime {
-          border-right: 2px solid #19548c;
-        }
-        .sort {
-          width: 15%;
-        }
-        .pgmtime {
-          width: 30%;
-        }
-        .details {
-          width: 50%;
-        }
-      }
-      .table-bottom {
-        border: none;
-        height: 4%;
-        font-size: 30px;
-        span {
-          display: inline-block;
-          height: 100%;
-          text-align: center;
-        }
-      }
-    }
-    .side {
+  .side {
       position: absolute;
       top: 0;
       left: 0;
-      width: 40%;
+      width: auto;
       height: 100%;
       z-index: 2;
       .side-content {
         float: left;
-        width: 85%;
+        width: 350px;
         height: 100%;
         background-color: rgba(0, 0, 0, .7);
         .personal {
@@ -322,12 +277,12 @@
         }
         .interactive,
         .process {
-          height: 4.5%;
+          height: 4%;
           text-align: center;
           button {
-            width: 90%;
-            height: 70px;
-            font-size: 30px;
+            width: 85%;
+            height: 60px;
+            font-size: 25px;
             border: none;
             color: #ffffff;
             background-color: #12589b;
@@ -340,7 +295,7 @@
           }
         }
         .process {
-          margin-bottom: 30px;
+          margin-bottom: 35px;
           button {
             background: url("../assets/images/process-icon.png") no-repeat 13% 50% / 10% #12589b;
           }
@@ -349,22 +304,24 @@
           height: 73%;
           text-align: center;
           .member-title {
-            height: 1.5%;
-            font-size: 30px;
+            height: 5%;
+            font-size: 25px;
             color: #fff;
+            margin-bottom: 1%;
           }
           input {
             width: 90%;
-            height: 3.5%;
+            height: 50px;
             font-size: 30px;
             line-height: 3.5%;
             text-align: center;
             border: none;
             border-radius: 50px;
             background-color: #84827e;
+            margin-bottom: 2%;
           }
           .member-list {
-            height: 92%;
+            height: 86.5%;
             overflow: auto;
             .online,
             .offline {
@@ -401,8 +358,8 @@
       }
       .icon {
         float: left;
-        margin-top: 225%;
-        width: 15%;
+        margin-top: 850px;
+        width: 100px;
         height: 8%;
         background: url("../assets/images/side-icon.png") no-repeat;
       }
@@ -417,6 +374,5 @@
         transform: translateX(-100%);
       }
     }
-  }
 </style>
 

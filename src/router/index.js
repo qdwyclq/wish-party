@@ -4,8 +4,6 @@ import Sign from '@/components/Sign'
 import Interactive from '@/components/Interactive'
 import Process from '@/components/Process'
 import Register from '@/components/Register'
-import Publish from '@/components/Publish'
-import One from '@/components/One'
 
 Vue.use(Router)
 
@@ -31,16 +29,6 @@ export default new Router({
       path: '/Register',
       name: 'Register',
       component: Register
-    },
-    {
-      path: '/Publish',
-      name: 'Publish',
-      component: Publish
-    },
-    {
-      path: '/One',
-      name: 'One',
-      component: One
     }
   ]
 })

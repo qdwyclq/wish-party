@@ -40,16 +40,9 @@
   </script>
 
   <style lang="scss" scoped>
+    @import '../assets/scss/layout.scss';
     .main {
-      width: 100%;
-      height: 100vh;
       background: url("../assets/images/sign-bg.jpg") no-repeat center / 100% #f2e7ed;
-      overflow: hidden;
-      @media only screen
-      and (min-device-width : 768px)
-      and (max-device-width : 1024px){
-        overflow: auto;
-      }
       .top {
         width: 100%;
         height: 45%;
