@@ -31,14 +31,13 @@
             <p v-for="(item, index) in voteList">
               <span class="sort">{{index + 1}}</span>
               <span class="program-name">{{item.ProgramName}}</span>
-              <!--<span class="like">投票</span>-->
               <span class="like">
                 <span class="custom-form-checkbox datacheck"></span>
                 <input type="checkbox" name="data[check]" value="female" id="optiona" class="cform datacheck" style="opacity: 0; position: absolute; left: -99999px;">
                 <label for="optiona" class="lblr">投票</label>
               </span>
-              <span class="details" @click="presentation">详情</span>
-              <span class="presentation" v-if="index == 0">
+              <span class="details" @click="presentation(index)">详情</span>
+              <span class="presentation" v-if="presentationIndex === index">
                 <span>{{item.details.programName}}</span>
                 <span>{{item.details.programType}}</span>
                 <span>{{item.details.department}}</span>
@@ -126,6 +125,7 @@
 
 <script>
   import MsSide from '@/components/Side'
+
   export default {
     name: 'Interactive',
     data() {
@@ -147,7 +147,7 @@
             headPortraits: '/src/assets/images/09.jpg',
             nickname: '某一位',
             newTime: '19:20:41',
-            bkbubble: '88888888888咖啡泡进喧嚣的庭院333444444444444444444444444444444'
+            bkbubble: '咖啡泡进喧嚣的庭院'
           }
         ],
         interactionList: ['vote', 'screen', 'program'],
@@ -165,6 +165,86 @@
           {
             ProgramName: '《黄河大合唱》大合唱',
             details: {
+              programName: '《1111》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
+          },
+          {
+            ProgramName: '《22222222222》大合唱',
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
+          },
+          {
+            ProgramName: '《333333333》大合唱',
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
+          },{
+            ProgramName: '《44444444》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱',
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
+          },
+          {
+            ProgramName: '《555555555》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱',
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
+          },
+          {
+            ProgramName: '《666666666666666》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱',
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
+          },
+          {
+            ProgramName: '《7777777777777》大合唱',
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
+          },
+          {
+            ProgramName: '《888888888888》大合唱',
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
+          },
+          {
+            ProgramName: '《88888888888888》大合唱',
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
+          },
+          {
+            ProgramName: '《11111111111》大合唱',
+            details: {
               programName: '《黄河大合唱》大合唱',
               programType: '大合唱',
               department: '运营一部',
@@ -173,70 +253,75 @@
           },
           {
             ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
           },
           {
             ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
-          },{
-            ProgramName: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
-          },
-          {
-            ProgramName: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
-          },
-          {
-            ProgramName: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
           },
           {
             ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
           },
           {
             ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
           },
           {
             ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
           },
           {
             ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
           },
           {
             ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
           },
           {
             ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
-          },
-          {
-            ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
-          },
-          {
-            ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
-          },
-          {
-            ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
-          },
-          {
-            ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
-          },
-          {
-            ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
-          },
-          {
-            ProgramName: '《黄河大合唱》大合唱',
-            details: '《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱《黄河大合唱》大合唱'
+            details: {
+              programName: '《黄河大合唱》大合唱',
+              programType: '大合唱',
+              department: '运营一部',
+              Performers: '18'
+            }
           }
         ],
         voteShow: false,
@@ -244,7 +329,8 @@
         programShow: false,
         paScreen: false,
         pitch: 'buy',
-        amount: 1
+        amount: 1,
+        presentationIndex: ''
       }
     },
     computed: {},
@@ -323,8 +409,10 @@
         this.chatList.push(newChat)
         this.chatmsg = ''
       },
-      presentation() {
-
+      presentation (index) {
+        this.presentationIndex = index
+        console.log(this.presentationIndex)
+        console.log(this.presentationIndex == index)
       }
     },
     components: {
@@ -394,12 +482,14 @@
       }
     }
     .interaction {
+      position: absolute;
+      bottom: 150px;
       width: 100%;
-      height: 9%;
+      height: 160px;
       span {
         display: inline-block;
         width: 22%;
-        height: 70%;
+        height: 100%;
         margin-right: -9%;
       }
       .vote {
@@ -425,7 +515,7 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 9%;
+      height: 150px;
       text-align: center;
       background-color: #242b33;
       input,
@@ -443,22 +533,22 @@
         outline: none;
       }
       input {
-        left: 19.5%;
-        width: 50%;
+        left: 13.5%;
+        width: 60%;
         text-indent: 40px;
         color: #313131;
         background-color: #e6e6e6;
       }
       button {
-        right: 10%;
-        width: 18%;
+        right: 3%;
+        width: 20%;
         color: #fff;
         background-color: #308ddb;
       }
       span {
         display: inline-block;
         top: 25%;
-        left: 10%;
+        left: 4%;
         width: 7%;
         height: 50%;
         background: url("../assets/images/expression.png") no-repeat center / 100% auto;
@@ -632,6 +722,7 @@
       .active {
         height: 70%;
         margin: 18% auto 0;
+        line-height: 70%;
         .vote-title {
           height: 13%;
           line-height: 310%;
@@ -650,6 +741,7 @@
             background: #fff;
           }
           p {
+            position: relative;
             height: 70px;
             padding: 2px 25px;
             line-height: 45px;
@@ -670,7 +762,7 @@
             .program-name {
               display: inline-block;
               width: 56%;
-              line-height: 100%;
+              line-height: 30px;
               overflow: hidden;
               text-overflow:ellipsis;
               white-space: nowrap;
@@ -686,8 +778,19 @@
                 background: url('../assets/images/sprite.png') no-repeat -140px -112px transparent;
               }
             }
+            /*节目提示*/
             .presentation {
-
+              z-index: 1;
+              width: 50%;
+              padding: 10px 20px 10px 30px;
+              position: absolute;
+              right: 0;
+              background-color: rgba(0, 0, 0, .65);
+              span {
+                width: 100%;
+                /*padding: 1px 20px;*/
+                color: #fff;
+              }
             }
           }
         }
