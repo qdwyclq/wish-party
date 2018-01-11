@@ -254,6 +254,7 @@
         color: #b92823;
       }
     }
+
     .content {
       height: 70%;
       width: 80%;

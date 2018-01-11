@@ -13,6 +13,7 @@
         </li>
       </ul>
     </div>
+
     <div class="interaction">
       <span v-for="(item, index) in interactionList" :class=interactionList[index] @click="interaction(item, index)"></span>
     </div>

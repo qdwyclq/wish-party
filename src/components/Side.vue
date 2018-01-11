@@ -9,6 +9,7 @@
           <router-link to='/Interactive'>
             <div class="interactive">
               <span></span>
+
               <button>&nbsp;&nbsp;&nbsp;&nbsp;进入聊天互动</button>
             </div>
           </router-link>
