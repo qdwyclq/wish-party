@@ -19,8 +19,7 @@
             </div>
           </router-link>
           <div class="member">
-            <p class="member-title">当前在线人数（68/92）</p>
-            <input type="text" value="搜索">
+            <p class="member-title">当前在线人数（68/920）</p>
             <div class="member-list">
               <p v-for="item in onlineList" class="online">
                 <span class="member-icon"></span>
@@ -32,7 +31,6 @@
                 <img :src="item.headPortrait" alt="">
                 <span class="personal-name">{{item.personalName}}</span>
               </p>
-
             </div>
           </div>
         </div>
@@ -255,15 +253,18 @@
       left: 0;
       width: auto;
       height: 100%;
+      overflow: hidden;
       z-index: 2;
-      .side-content {
+      .side-content, .icon {
         float: left;
+      }
+      .side-content {
         width: 350px;
         height: 100%;
         background-color: rgba(0, 0, 0, .7);
         .personal {
           width: 100%;
-          height: 15%;
+          height: 270px;
           text-align: center;
           img {
             width: 50%;
@@ -277,7 +278,7 @@
         }
         .interactive,
         .process {
-          height: 4%;
+          height: 70px;
           text-align: center;
           button {
             width: 85%;
@@ -304,25 +305,16 @@
           height: 73%;
           text-align: center;
           .member-title {
-            height: 5%;
+            height: 70px;
             font-size: 25px;
             color: #fff;
             margin-bottom: 1%;
           }
-          input {
-            width: 90%;
-            height: 50px;
-            font-size: 30px;
-            line-height: 3.5%;
-            text-align: center;
-            border: none;
-            border-radius: 50px;
-            background-color: #84827e;
-            margin-bottom: 2%;
-          }
           .member-list {
             height: 86.5%;
             overflow: auto;
+            text-align: left;
+            padding-left: 30px;
             .online,
             .offline {
               height: 50px;
@@ -345,7 +337,7 @@
             }
             .online {
               .member-icon {
-                background: url("../assets/images/activation.png") no-repeat center / 75%;
+                background: url("../assets/images/sprite.png") no-repeat center / 75%;
               }
             }
             .offline {
@@ -357,7 +349,6 @@
         }
       }
       .icon {
-        float: left;
         margin-top: 850px;
         width: 100px;
         height: 8%;

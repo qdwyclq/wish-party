@@ -42,6 +42,7 @@
   <style lang="scss" scoped>
     @import '../assets/scss/layout.scss';
     .main {
+
       background: url("../assets/images/sign-bg.jpg") no-repeat center / 100% #f2e7ed;
       .top {
         width: 100%;

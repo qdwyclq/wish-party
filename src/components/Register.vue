@@ -107,7 +107,7 @@
   }
 
   .main {
-    background: url("../assets/images/registerbg.jpg") no-repeat left top / 100% #f2e7ed;
+    background: url("../assets/images/registerbg.jpg") no-repeat left bottom / 100% #1b225f;
     div {
       width: 100%;
       padding-top: 112px;
@@ -151,9 +151,11 @@
           border: 3px solid #fff;
           text-indent: 40px;
         }
+        input, option {
+          color: #fff;
+        }
         input[type="text"] {
           height: 133px;
-          color: #fff;
         }
         select {
           height: 139px;
@@ -163,7 +165,7 @@
           color: #545a5d;
         }
         option {
-          color: #fff;
+          /*color: #fff;*/
           background-color: #000;
         }
         input[type="button"] {
@@ -171,7 +173,7 @@
           height: 133px;
           margin-bottom: 150px;
           font-size: 56px;
-          color: #ffffff;
+          /*color: #fff;*/
           border: solid 5px #0f015e;
           background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0a4782));
         }

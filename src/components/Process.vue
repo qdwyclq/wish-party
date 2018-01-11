@@ -260,14 +260,18 @@
       margin: 0 auto;
       border: 2px solid #19548c;
       border-radius: 30px;
-      p {
+      p, .table-bottom {
         height: 4%;
         font-size: 30px;
-        border-bottom: 2px solid #19548c;
         span {
           display: inline-block;
           height: 100%;
           text-align: center;
+        }
+      }
+      p {
+        border-bottom: 2px solid #19548c;
+        span {
         }
         .sort,
         .pgmtime {
@@ -285,136 +289,6 @@
       }
       .table-bottom {
         border: none;
-        height: 4%;
-        font-size: 30px;
-        span {
-          display: inline-block;
-          height: 100%;
-          text-align: center;
-        }
-      }
-    }
-    .side {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 40%;
-      height: 100%;
-      z-index: 2;
-      .side-content {
-        float: left;
-        width: 85%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, .7);
-        .personal {
-          width: 100%;
-          height: 15%;
-          text-align: center;
-          img {
-            width: 50%;
-            margin-top: 40px;
-            border-radius: 50%;
-          }
-          .personal-name {
-            font-size: 35px;
-            color: #fff;
-          }
-        }
-        .interactive,
-        .process {
-          height: 4.5%;
-          text-align: center;
-          button {
-            width: 90%;
-            height: 70px;
-            font-size: 30px;
-            border: none;
-            color: #ffffff;
-            background-color: #12589b;
-            border-radius: 640px;
-          }
-        }
-        .interactive {
-          button {
-            background: url("../assets/images/interactive-icon.png") no-repeat 13% 50% / 12% #12589b;
-          }
-        }
-        .process {
-          margin-bottom: 30px;
-          button {
-            background: url("../assets/images/process-icon.png") no-repeat 13% 50% / 10% #12589b;
-          }
-        }
-        .member {
-          height: 73%;
-          text-align: center;
-          .member-title {
-            height: 1.5%;
-            font-size: 30px;
-            color: #fff;
-          }
-          input {
-            width: 90%;
-            height: 3.5%;
-            font-size: 30px;
-            line-height: 3.5%;
-            text-align: center;
-            border: none;
-            border-radius: 50px;
-            background-color: #84827e;
-          }
-          .member-list {
-            height: 92%;
-            overflow: auto;
-            .online,
-            .offline {
-              height: 50px;
-              line-height: 50px;
-              img {
-                width: 45px;
-                height: 45px;
-                border-radius: 50%;
-              }
-              .member-icon {
-                display: inline-block;
-                width: 45px;
-                height: 45px;
-              }
-              .personal-name {
-                color: #fff;
-                font-size: 35px;
-                vertical-align: middle;
-              }
-            }
-            .online {
-              .member-icon {
-                background: url("../assets/images/activation.png") no-repeat center / 75%;
-              }
-            }
-            .offline {
-              .member-icon {
-                background: url("../assets/images/not-active.png") no-repeat center / 75%;
-              }
-            }
-          }
-        }
-      }
-      .icon {
-        float: left;
-        margin-top: 225%;
-        width: 15%;
-        height: 8%;
-        background: url("../assets/images/side-icon.png") no-repeat;
-      }
-      .fade-enter-active,
-      .fade-leave-active {
-        transition: opacity .2s
-      }
-      .fade-enter,
-      .fade-leave-to
-      {
-        opacity: 0;
-        transform: translateX(-100%);
       }
     }
   }
